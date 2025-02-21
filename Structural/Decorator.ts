@@ -119,9 +119,11 @@ class WhippedCreamDecorator extends CoffeeDecorator {
         return this.coffee.description() + ", Whipped Cream";
     }
 }
+
 interface Decorators {
     [key:string]: new (coffee:Coffee) => CoffeeDecorator
 }
+
 function createCustomCoffe(baseCofee: Coffee, addOns: string[]): Coffee {
     const decorators: Decorators = {
         milk: MilkDecorator,
